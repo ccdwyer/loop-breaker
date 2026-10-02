@@ -8,5 +8,9 @@
     "url": "https://github.com/ccdwyer"
   },
   "repository": "https://github.com/ccdwyer/loop-breaker",
-  "license": "MIT"
+  "license": "MIT",
+  "homepage": "https://github.com/ccdwyer/loop-breaker",
+  "supportUrl": "https://github.com/ccdwyer/loop-breaker/issues",
+  "documentationUrl": "https://github.com/ccdwyer/loop-breaker#readme",
+  "privacyPolicyUrl": "https://github.com/ccdwyer/loop-breaker/blob/main/PRIVACY.md"
 }
