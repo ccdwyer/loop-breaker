@@ -1,0 +1,13 @@
+{
+  "name": "loop-breaker",
+  "owner": {
+    "name": "Chris Dwyer"
+  },
+  "plugins": [
+    {
+      "name": "loop-breaker",
+      "source": "./",
+      "description": "Stops the agent repeating the same failing command or undoing its own edits, and shows a stuck meter above the prompt"
+    }
+  ]
+}
