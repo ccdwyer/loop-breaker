@@ -1,5 +1,9 @@
 # Loop Breaker
 
+![Loop Breaker demo](media/demo.gif)
+
+*The second identical failure raises the stuck band; the third identical run is refused. [MP4](media/demo.mp4) · screenshots: [warning](media/02-warning.png), [refused](media/03-refused.png)*
+
 A Claude Code mod that stops the agent from going round in circles.
 
 - **Repeat failures.** If the same tool call, with exactly the same arguments, fails twice in a row with the same error (timings, temp paths and saved-output paths are ignored when comparing), and nothing in the code has changed since, the third try is refused. The model is told to fix the cause first. Failures from runs that started before the code changed are ignored. These all reset the count, so normal fix-and-retest work is never blocked:
