@@ -12,8 +12,8 @@ History is kept separately for each agent, so a looping subagent is caught too a
 ## Install
 
 ```
-/plugin marketplace add ccdwyer/loop-breaker
-/plugin install loop-breaker@loop-breaker
+/plugin marketplace add ccdwyer/claude-mods
+/plugin install loop-breaker@ccdwyer-mods
 /reload-plugins
 ```
 
