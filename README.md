@@ -2,7 +2,7 @@
 
 ![Loop Breaker demo](media/demo.gif)
 
-*The second identical failure raises the stuck band; the third identical run is refused. [MP4](media/demo.mp4) · screenshots: [warning](media/02-warning.png), [refused](media/03-refused.png)*
+*The second identical failure raises the stuck band; the third identical run is refused. [MP4](https://github.com/ccdwyer/claude-mods/raw/main/media/loop-breaker.mp4) · screenshots: [warning](media/02-warning.png), [refused](media/03-refused.png)*
 
 A Claude Code mod that stops the agent from going round in circles.
 
@@ -40,3 +40,23 @@ History is kept per agent, and a subagent's history is dropped when it finishes.
 claude plugin validate .
 claude plugin test .
 ```
+
+## What it hooks
+
+Events this mod hooks, as `claude plugin validate` reads the module:
+
+- `session.start`
+- `command.run{command=unstick}`
+- `prompt.submit`
+- `session.end`
+- `turn.complete`
+- `tool.call`
+- `ui.render{component=AbovePrompt}`
+
+Engine calls it makes: `$.command.register`, `$.fs.read (via undoesAgain)`, `$.state.get`, `$.state.set`, `$.ui.resolve`.
+
+A `tool.call` hook sits in the middle of every tool call: it can see the call, refuse it, or add context to its result. This mod uses that only for the behaviour described above.
+
+## License
+
+MIT
